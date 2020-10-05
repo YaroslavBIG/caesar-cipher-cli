@@ -1,11 +1,8 @@
-const fs = require('fs');
 const program = require('commander');
+
 const {
   encode
 } = require('./encode');
-const {
-  decode
-} = require('./decode');
 
 program
   .storeOptionsAsProperties(false)
@@ -21,20 +18,15 @@ program
 try {
   program.parse();
   const options = program.opts();
-  console.log('Options: ', options);
+
   switch (options.action) {
     case 'encode':
-      encode(options.input);
-      break;
     case 'decode':
-      decode(options.shift)
+      encode(options.input);
       break;
     default:
       return console.log('unexpected action argument')
   }
-
-
 } catch (e) {
   console.log(e);
-
 }
