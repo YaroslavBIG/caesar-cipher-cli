@@ -4,11 +4,18 @@
 
 CLI tool for encode and decode a text by [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher).
 
-### Install
-
-Before use you must install node modules ```npm install```
+### Install   
+| Open your terminal                  |
+| -------------------------------------|
+| 1. Download or clone this repository    |
+|git clone git@github.com:YaroslavBIG/caesar-cipher-cli.git|
+| 2. Go to the app folder                 |
+| cd caesar-cipher-cli/caesar-cipher-cli             |
+| 3. install node modules|
+|npm install|
                                           
 ### Usage:
+In the app folder write the command ```node casarChiper [options]```
 
 #### Options:
 CLI tool accept options (short alias and full name):
