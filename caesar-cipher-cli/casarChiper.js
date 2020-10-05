@@ -38,7 +38,7 @@ try {
       encode(options.input);
       break;
     default:
-      return console.log('unexpected action argument')
+      return process.stderr.write('unexpected action argument')
   }
 } catch (e) {
   console.log(e);
