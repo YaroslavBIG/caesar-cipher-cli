@@ -24,7 +24,7 @@ try {
   console.log('Options: ', options);
   switch (options.action) {
     case 'encode':
-      encode(options.shift, options.input);
+      encode(options.input);
       break;
     case 'decode':
       decode(options.shift)

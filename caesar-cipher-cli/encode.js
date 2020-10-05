@@ -4,14 +4,12 @@ const { userInput } = require('./userInput');
 const { encodeText } = require('./encodeText');
 
 
-exports.encode = (shift, fileNameArg) => {
-  // console.log('encode', shift);
+exports.encode = (fileNameArg) => {
   // console.log(__dirname);
   // const fileName = fileNameArg ? fileNameArg : 'input.txt';
 
-
   if(!fileNameArg) {
-    userInput(shift)
+    userInput()
   } else {
     const filePath = path.join(__dirname, 'data', fileNameArg);
 
@@ -19,7 +17,7 @@ exports.encode = (shift, fileNameArg) => {
       if (error) {
         console.log(error);
       } else {
-        return encodeText(fileContent, shift);
+
       }
 
     });
