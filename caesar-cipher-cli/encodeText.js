@@ -1,10 +1,11 @@
 const program = require('commander');
+const { writeToFile } = require('./writeToFile');
 
 exports.encodeText = (text) => {
   console.log('Source Text: ', text);
   program.parse();
   const options = program.opts();
-  const { shift, action } = options;
+  const { shift, action, output } = options;
   const sh = shift > 26 ? (parseInt(shift, 10) % 26) : parseInt(shift, 10);
 
   const isRightChar = (charNum) => {
@@ -33,6 +34,6 @@ exports.encodeText = (text) => {
       res += text[count];
     }
   }
-  console.log('Encoded: ', res);
+  output ? writeToFile(text) : console.log('Encoded: ', res);
   return res;
 };
