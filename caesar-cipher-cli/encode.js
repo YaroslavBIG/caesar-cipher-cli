@@ -19,7 +19,7 @@ exports.encode = (fileNameArg) => {
       if (error) {
         console.log(error);
       } else {
-        action === 'encode' ? encodeText(fileContent) : decodeText(fileContent);
+        encodeText(fileContent);
       }
     });
   }
