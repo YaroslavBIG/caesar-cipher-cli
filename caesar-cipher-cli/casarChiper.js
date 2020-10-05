@@ -1,4 +1,5 @@
 const program = require('commander');
+const fs = require('fs');
 
 const {
   encode
@@ -18,6 +19,18 @@ program
 try {
   program.parse();
   const options = program.opts();
+
+  if(options.output) {
+    const path = require('path');
+    const filePath = path.join(__dirname, options.output);
+
+    fs.access(filePath, function(error){
+      if (error) {
+        process.stderr.write('The output file is missing or you don\'t have enough permissions');
+        process.exit(40)
+      }
+  })
+  }
 
   switch (options.action) {
     case 'encode':

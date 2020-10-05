@@ -12,7 +12,8 @@ exports.encode = (input) => {
     const filePath = path.join(__dirname, input);
     fs.readFile(filePath, 'utf-8', (error, fileContent) => {
       if (error) {
-        console.log(error);
+        process.stderr.write('The file is missing or you don\'t have enough permissions');
+        process.exit(40)
       } else {
         encodeText(fileContent);
       }

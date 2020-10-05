@@ -6,14 +6,13 @@ exports.userInput = () => {
   program.parse();
   const options = program.opts();
   const { action } = options;
-  console.log(action)
 
   const rl = readline.createInterface({
     input: process.stdin,
   });
 
   rl.on('line', line => {
-    process.stdout.write(line + '\n')
+    process.stdout.write(`${action}\n`)
     encodeText(line);
   })
 }

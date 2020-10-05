@@ -34,6 +34,5 @@ exports.encodeText = (text) => {
       res += text[count];
     }
   }
-  output ? writeToFile(text) : console.log('Encoded: ', res);
-  return res;
+  output ? writeToFile(res) : console.log('Result: ', res);
 };
