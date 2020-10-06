@@ -41,5 +41,5 @@ try {
       return process.stderr.write('unexpected action argument')
   }
 } catch (e) {
-  console.log(e);
+  process.stderr.write(e);
 }
