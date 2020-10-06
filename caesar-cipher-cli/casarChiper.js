@@ -19,14 +19,20 @@ program
 try {
   program.parse();
   const options = program.opts();
+  const {shift, output} = options;
 
-  if(options.output) {
+  if(Math.sign(shift) !== 1 && Math.sign(shift) !== 0) {
+    process.stderr.write('Error: Shift must be positive number');
+    process.exit(55)
+  }
+
+  if(output) {
     const path = require('path');
-    const filePath = path.join(__dirname, options.output);
+    const filePath = path.join(__dirname, output);
 
     fs.access(filePath, function(error){
       if (error) {
-        process.stderr.write('The output file is missing or you don\'t have enough permissions');
+        process.stderr.write('Error: The output file is missing or you don\'t have enough permissions');
         process.exit(40)
       }
   })
@@ -38,7 +44,7 @@ try {
       encode(options.input);
       break;
     default:
-      return process.stderr.write('unexpected action argument')
+      return process.stderr.write('Error: unexpected action argument')
   }
 } catch (e) {
   process.stderr.write(e);
