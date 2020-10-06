@@ -30,7 +30,7 @@ CLI tool accept options (short alias and full name):
 #### Usage example:
 
 ```bash
-$ node casarChiper -a encode -s 7 -i "./input.txt" -o "./output.txt"
+$ node casarChiper -a encode -s 7 -i "./data/input.txt" -o "./data/output.txt"
 ```
 
 ```bash
